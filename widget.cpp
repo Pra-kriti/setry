@@ -15,14 +15,13 @@ Widget::Widget(QWidget *parent) :
 
 
 
-     if(checkFile.isFile())
-     {
+connOpen();
          if(myDB.open())
          {
              ui->Status->setText("PLEASE ENTER YOUR USERNAME AND PASSWORD ");
          }
 
- }
+
      else{ui->Status->setText("Failure connection to db file");}
 }
 

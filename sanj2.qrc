@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <RCC>
     <qresource prefix="/new/prefix1">
         <file>2017-09-1--01-10-09.png</file>
@@ -6,12 +5,4 @@
         <file>SAN.png</file>
     </qresource>
 </RCC>
-=======
-<RCC>
-    <qresource prefix="/new/prefix1">
-        <file>2017-09-1--01-10-09.png</file>
-        <file>login.sqlite</file>
-        <file>SAN.png</file>
-    </qresource>
-</RCC>
->>>>>>> origin/master
+

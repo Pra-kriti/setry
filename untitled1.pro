@@ -29,4 +29,4 @@ FORMS    += widget.ui \
     newhome1.ui
 
 RESOURCES += \
-      sanj2.qrc
+    sanj2.qrc
