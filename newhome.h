@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::newhome *ui;
+    bool eventFilter(QObject *obj, QEvent *event);
 };
 
 #endif // NEWHOME_H

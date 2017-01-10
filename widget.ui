@@ -52,10 +52,16 @@ background-color: rgb(167, 167, 167);
 </string>
      </property>
      <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
+      <enum>QFrame::Box</enum>
      </property>
      <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>5</number>
+     </property>
+     <property name="midLineWidth">
+      <number>4</number>
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; color:#ffffff;&quot;&gt;SANJIVANI&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -67,7 +73,7 @@ background-color: rgb(167, 167, 167);
       <bool>true</bool>
      </property>
      <property name="margin">
-      <number>9</number>
+      <number>-5</number>
      </property>
     </widget>
    </item>
@@ -181,6 +187,9 @@ background-color: rgb(167, 167, 167);
              <bold>true</bold>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(231, 231, 231);</string>
+           </property>
            <property name="text">
             <string>LOGIN AS SUPERVISOR</string>
            </property>
@@ -277,6 +286,9 @@ background-color: rgb(167, 167, 167);
              <bold>true</bold>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(231, 231, 231);</string>
+           </property>
            <property name="text">
             <string>LOGIN AS STAFF</string>
            </property>
@@ -296,6 +308,9 @@ background-color: rgb(167, 167, 167);
              <weight>75</weight>
              <bold>true</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(231, 231, 231);</string>
            </property>
            <property name="text">
             <string>LOGIN AS ADMIN</string>
