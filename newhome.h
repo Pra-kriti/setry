@@ -1,5 +1,6 @@
 #ifndef NEWHOME_H
 #define NEWHOME_H
+#include <widget.h>
 
 #include <QWidget>
 
@@ -14,6 +15,9 @@ class newhome : public QWidget
 public:
     explicit newhome(QWidget *parent = 0);
     ~newhome();
+
+private slots:
+ //   void on_ViewStaff_clicked();
 
 private:
     Ui::newhome *ui;

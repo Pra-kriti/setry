@@ -75,3 +75,8 @@ newhome::~newhome()
 {
     delete ui;
 }
+
+//void newhome::on_ViewStaff_clicked()
+//{
+
+//}

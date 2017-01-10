@@ -116,7 +116,7 @@ background-color: rgb(167, 167, 167);
             <enum>QFrame::Raised</enum>
            </property>
            <property name="text">
-            <string>STATUS::</string>
+            <string>PLEASE ENTER YOUR USERNAME AND PASSWORD</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>

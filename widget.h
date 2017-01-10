@@ -12,7 +12,7 @@
 #include <QSqlQuery>
 #include <QString>
 
-//#define Path_to_DB "C:/Users/shreetis13/Desktop/newse/untitled1/login.sqlite"
+//#define Path_to_DB "C:/Users/shreetis13/Desktop/newse/untitled1/table(1).sqlite"
 
 namespace Ui {
 class Widget;
