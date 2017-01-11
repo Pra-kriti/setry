@@ -217,11 +217,54 @@ background-color: rgb(167, 167, 167);
          <enum>QFrame::Sunken</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
-         <item row="0" column="1">
-          <widget class="QTableView" name="tableView"/>
+         <item row="0" column="0">
+          <widget class="QTableView" name="tableView">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>3</width>
+             <height>3</height>
+            </size>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QAbstractScrollArea::AdjustToContents</enum>
+           </property>
+           <property name="showGrid">
+            <bool>true</bool>
+           </property>
+           <property name="gridStyle">
+            <enum>Qt::SolidLine</enum>
+           </property>
+           <property name="sortingEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+           <property name="cornerButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
-         <item row="0" column="2">
+         <item row="1" column="0">
           <widget class="QLabel" name="InfoLabel">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
@@ -230,6 +273,59 @@ background-color: rgb(167, 167, 167);
            </property>
            <property name="text">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#283447;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLineEdit" name="SearchBar">
+             <property name="text">
+              <string>Firstname</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="SearchBar1">
+             <property name="text">
+              <string>Lastname</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="SearchButton">
+             <property name="font">
+              <font>
+               <family>Comic Sans MS</family>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(236, 236, 236);</string>
+             </property>
+             <property name="text">
+              <string>SEARCH</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="SearchLabel">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Enter the First Name or the Last Name of the staff to be searched in the database:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>

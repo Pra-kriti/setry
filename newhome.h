@@ -17,7 +17,9 @@ public:
     ~newhome();
 
 private slots:
- //   void on_ViewStaff_clicked();
+    void on_ViewStaff_clicked();
+    void update1();
+    void on_SearchButton_clicked();
 
 private:
     Ui::newhome *ui;
