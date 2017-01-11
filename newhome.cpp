@@ -86,10 +86,14 @@ newhome::~newhome()
 
 void newhome::on_ViewStaff_clicked()
 {
+   ui->ViewSuper->hide();
+   ui->GTS->hide();
+   ui->VS->hide();
    update1();
 }
 void newhome::update1()
 {
+    selector=1;
     ui->tableView->show();
     ui->InfoLabel->hide();
     ui->SearchBar->show();
@@ -116,21 +120,37 @@ void newhome::update1()
 
 void newhome::on_SearchButton_clicked()
 {
-    QString Firstname= ui->SearchBar->text();
-    QString Lastname= ui->SearchBar1->text();
-
     Widget conn;
     QSqlQueryModel * modal=new QSqlQueryModel();
             conn.connOpen();
             QSqlQuery *qry=new QSqlQuery(conn.myDB);
-    qry->prepare("SELECT* FROM staff WHERE firstname=\'"+Firstname+"\' OR lastname=\'"+Lastname+"\'");
-    qry->exec();
+    if (selector==1)
+    {
+        QString Firstname= ui->SearchBar->text();
+        QString Lastname= ui->SearchBar1->text();
+
+
+        qry->prepare("SELECT* FROM staff WHERE LOWER(firstname)=LOWER(\'"+Firstname+"\') OR LOWER(lastname)=LOWER(\'"+Lastname+"\')");
+          qry->exec();
+          modal->setQuery(*qry);
+    }
+    else if (selector==3)
+    {
+        QString Items_name= ui->SearchBar->text();
+        QString Location_name= ui->SearchBar1->text();
+
+
+        qry->prepare("SELECT* FROM [table] WHERE LOWER(ITEMSNAME_1) LIKE LOWER(\'\%"+Items_name+"\%\') OR LOWER(LOCATION_NAME) LIKE LOWER(\'\%"+Location_name+"\%\') ");
+   qry->exec();
+   qDebug()<<(qry->size());
+   modal->setQuery(*qry);
+    }
+    else{}
+
     qDebug()<<(qry->size());
-    modal->setQuery(*qry);
     if(modal->rowCount()==0)
     {
-        QMessageBox *alert1= new QMessageBox;
-        alert1->setText("No such record found in the staff directory!!");
+        QMessageBox::warning(this, "!!ALERT!! ","No such record found in the staff directory!!");
     }
     ui->tableView->setModel(modal);
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -138,4 +158,44 @@ void newhome::on_SearchButton_clicked()
     qDebug()<<(modal->rowCount());
 
 
+}
+
+void newhome::on_BackButton_clicked()
+{
+    newhome *admin=new newhome;
+    admin->showMaximized();
+    this->close();
+}
+
+void newhome::on_GTS_clicked()
+{
+    ui->ViewSuper->hide();
+    ui->ViewStaff->hide();
+    ui->VS->hide();
+    update2();
+}
+void newhome::update2()
+{
+    selector=3;
+    ui->tableView->show();
+    ui->InfoLabel->hide();
+    ui->SearchBar->show();
+    ui->SearchBar1->show();
+    ui->SearchLabel->show();
+    ui->SearchButton->show();
+    ui->tableView->setMaximumWidth(16777215);
+    ui->tableView->setMaximumHeight(16777215);
+    ui->tableView->setStyleSheet("background-color:rgb(231, 231, 231)");
+    Widget conn;
+    QSqlQueryModel * modal=new QSqlQueryModel();
+            conn.connOpen();
+            QSqlQuery *qry=new QSqlQuery(conn.myDB);
+    qry->prepare("SELECT* FROM [table]");
+    qry->exec();
+    qDebug()<<(qry->size());
+    modal->setQuery(*qry);
+    ui->tableView->setModel(modal);
+    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    conn.connClose();
+    qDebug()<<(modal->rowCount());
 }

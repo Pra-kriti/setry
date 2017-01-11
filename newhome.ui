@@ -100,29 +100,6 @@ background-color: rgb(167, 167, 167);
          <enum>QFrame::Sunken</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout">
-         <item row="1" column="0" colspan="3">
-          <widget class="QPushButton" name="ViewSuper">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="font">
-            <font>
-             <family>Comic Sans MS</family>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(231, 231, 231);</string>
-           </property>
-           <property name="text">
-            <string>VIEW/ADD SUPERVISOR</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="0" colspan="3">
           <widget class="QPushButton" name="ViewStaff">
            <property name="sizePolicy">
@@ -143,6 +120,29 @@ background-color: rgb(167, 167, 167);
            </property>
            <property name="text">
             <string>VIEW STAFF</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="3">
+          <widget class="QPushButton" name="ViewSuper">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(231, 231, 231);</string>
+           </property>
+           <property name="text">
+            <string>VIEW/ADD SUPERVISOR</string>
            </property>
           </widget>
          </item>
@@ -190,6 +190,13 @@ background-color: rgb(167, 167, 167);
            </property>
            <property name="text">
             <string>VIEW SALES</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" colspan="3">
+          <widget class="QPushButton" name="BackButton">
+           <property name="text">
+            <string>BACK</string>
            </property>
           </widget>
          </item>
@@ -279,6 +286,24 @@ background-color: rgb(167, 167, 167);
            </property>
           </widget>
          </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="SearchLabel">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Enter the First Name or the Last Name of the staff to be searched in the database:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
          <item row="3" column="0">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
@@ -314,24 +339,6 @@ background-color: rgb(167, 167, 167);
            </item>
           </layout>
          </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="SearchLabel">
-           <property name="font">
-            <font>
-             <family>Comic Sans MS</family>
-             <pointsize>10</pointsize>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Enter the First Name or the Last Name of the staff to be searched in the database:</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
         </layout>
        </widget>
       </item>
@@ -341,5 +348,22 @@ background-color: rgb(167, 167, 167);
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>BackButton</sender>
+   <signal>clicked()</signal>
+   <receiver>newhome</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>373</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>216</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

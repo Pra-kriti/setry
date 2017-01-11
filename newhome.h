@@ -14,12 +14,17 @@ class newhome : public QWidget
 
 public:
     explicit newhome(QWidget *parent = 0);
+    int selector;// selects choise of sreen for search
     ~newhome();
 
 private slots:
     void on_ViewStaff_clicked();
     void update1();
     void on_SearchButton_clicked();
+    void update2();
+    void on_BackButton_clicked();
+
+    void on_GTS_clicked();
 
 private:
     Ui::newhome *ui;
