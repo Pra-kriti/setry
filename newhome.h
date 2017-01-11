@@ -21,10 +21,14 @@ private slots:
     void on_ViewStaff_clicked();
     void update1();
     void on_SearchButton_clicked();
-    void update2();
+    void update3();
     void on_BackButton_clicked();
-
+    void update2();
     void on_GTS_clicked();
+
+    void on_ViewSuper_clicked();
+
+    void on_ExistSuper_clicked();
 
 private:
     Ui::newhome *ui;

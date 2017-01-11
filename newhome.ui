@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>434</width>
+    <width>586</width>
     <height>413</height>
    </rect>
   </property>
@@ -100,26 +100,16 @@ background-color: rgb(167, 167, 167);
          <enum>QFrame::Sunken</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout">
-         <item row="0" column="0" colspan="3">
-          <widget class="QPushButton" name="ViewStaff">
+         <item row="2" column="0" colspan="3">
+          <widget class="QPushButton" name="ExistSuper">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="font">
-            <font>
-             <family>Comic Sans MS</family>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(231, 231, 231);</string>
-           </property>
            <property name="text">
-            <string>VIEW STAFF</string>
+            <string>VIEW EXISTING SUPERVISOR</string>
            </property>
           </widget>
          </item>
@@ -146,8 +136,21 @@ background-color: rgb(167, 167, 167);
            </property>
           </widget>
          </item>
-         <item row="2" column="0" colspan="3">
-          <widget class="QPushButton" name="GTS">
+         <item row="3" column="0" colspan="3">
+          <widget class="QPushButton" name="ChangeSuper">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>CHANGE SUPERVISOR</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="3">
+          <widget class="QPushButton" name="ViewStaff">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -157,7 +160,6 @@ background-color: rgb(167, 167, 167);
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
-             <pointsize>8</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
@@ -166,11 +168,11 @@ background-color: rgb(167, 167, 167);
             <string notr="true">background-color: rgb(231, 231, 231);</string>
            </property>
            <property name="text">
-            <string>GO TO STORE</string>
+            <string>VIEW STAFF</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="0" colspan="3">
+         <item row="5" column="0" colspan="3">
           <widget class="QPushButton" name="VS">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -193,10 +195,34 @@ background-color: rgb(167, 167, 167);
            </property>
           </widget>
          </item>
-         <item row="4" column="0" colspan="3">
+         <item row="6" column="0" colspan="3">
           <widget class="QPushButton" name="BackButton">
            <property name="text">
             <string>BACK</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" colspan="3">
+          <widget class="QPushButton" name="GTS">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>8</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(231, 231, 231);</string>
+           </property>
+           <property name="text">
+            <string>GO TO STORE</string>
            </property>
           </widget>
          </item>
@@ -224,6 +250,52 @@ background-color: rgb(167, 167, 167);
          <enum>QFrame::Sunken</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
+         <item row="3" column="0">
+          <widget class="QLabel" name="InfoLabel">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>26</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#283447;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="SearchLabel">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="0">
           <widget class="QTableView" name="tableView">
            <property name="sizePolicy">
@@ -258,65 +330,19 @@ background-color: rgb(167, 167, 167);
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="InfoLabel">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Comic Sans MS</family>
-             <pointsize>26</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#283447;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="SearchLabel">
-           <property name="font">
-            <font>
-             <family>Comic Sans MS</family>
-             <pointsize>10</pointsize>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Enter the First Name or the Last Name of the staff to be searched in the database:</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
+         <item row="5" column="0">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
             <widget class="QLineEdit" name="SearchBar">
              <property name="text">
-              <string>Firstname</string>
+              <string/>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLineEdit" name="SearchBar1">
              <property name="text">
-              <string>Lastname</string>
+              <string/>
              </property>
             </widget>
            </item>
@@ -338,6 +364,22 @@ background-color: rgb(167, 167, 167);
             </widget>
            </item>
           </layout>
+         </item>
+         <item row="2" column="0">
+          <widget class="QTableView" name="SupervisorProfile"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QGraphicsView" name="SuperImage">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-image: url(:/new/prefix1/2017-09-1--01-10-09.png);</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>

@@ -8,6 +8,11 @@ newhome::newhome(QWidget *parent) :
 {
     ui->setupUi(this);
     this->showMaximized();
+    ui->SuperImage->hide();
+    ui->ExistSuper->hide();
+    ui->ChangeSuper->hide();
+    ui->SupervisorProfile->hide();
+    ui->BackButton->hide();
     ui->SearchBar->hide();
     ui->SearchBar1->hide();
     ui->SearchLabel->hide();
@@ -86,16 +91,21 @@ newhome::~newhome()
 
 void newhome::on_ViewStaff_clicked()
 {
+
+   ui->BackButton->show();
    ui->ViewSuper->hide();
    ui->GTS->hide();
    ui->VS->hide();
+   ui->InfoLabel->hide();
    update1();
 }
 void newhome::update1()
 {
     selector=1;
+    ui->SearchBar->setPlaceholderText("First Name");
+    ui->SearchBar1->setPlaceholderText("Last Name");
+    ui->SearchLabel->setText("Enter the First Name or the Last Name of the staff to be searched in the database:");
     ui->tableView->show();
-    ui->InfoLabel->hide();
     ui->SearchBar->show();
     ui->SearchBar1->show();
     ui->SearchLabel->show();
@@ -150,7 +160,7 @@ void newhome::on_SearchButton_clicked()
     qDebug()<<(qry->size());
     if(modal->rowCount()==0)
     {
-        QMessageBox::warning(this, "!!ALERT!! ","No such record found in the staff directory!!");
+        QMessageBox::warning(this, "!!ALERT!! ","No such record found in the directory!!");
     }
     ui->tableView->setModel(modal);
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -169,13 +179,18 @@ void newhome::on_BackButton_clicked()
 
 void newhome::on_GTS_clicked()
 {
+    ui->BackButton->show();
     ui->ViewSuper->hide();
     ui->ViewStaff->hide();
     ui->VS->hide();
-    update2();
+    update3();
 }
-void newhome::update2()
+void newhome::update3()
 {
+
+    ui->SearchBar->setPlaceholderText("Item Name");
+    ui->SearchBar1->setPlaceholderText("Category");
+    ui->SearchLabel->setText("Enter the Item Name or the Category of the medicine to be searched in the database:");
     selector=3;
     ui->tableView->show();
     ui->InfoLabel->hide();
@@ -198,4 +213,42 @@ void newhome::update2()
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     conn.connClose();
     qDebug()<<(modal->rowCount());
+}
+
+void newhome::on_ViewSuper_clicked()
+{
+
+   ui->BackButton->show();
+   ui->ViewStaff->hide();
+   ui->GTS->hide();
+   ui->VS->hide();
+   ui->ChangeSuper->show();
+   ui->ExistSuper->show();
+    ui->InfoLabel->hide();
+    update2();
+}
+void newhome::update2()
+
+{
+    selector=2;
+
+}
+void newhome::on_ExistSuper_clicked()
+{
+    ui->SupervisorProfile->show();
+    ui->SuperImage->show();
+    Widget conn;
+    QSqlQueryModel * modal=new QSqlQueryModel();
+            conn.connOpen();
+            QSqlQuery *qry=new QSqlQuery(conn.myDB);
+    qry->prepare("SELECT* FROM [super]");
+    qry->exec();
+    qDebug()<<(qry->size());
+    modal->setQuery(*qry);
+    ui->SupervisorProfile->setModel(modal);
+    ui->SupervisorProfile->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->SupervisorProfile->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    conn.connClose();
+    qDebug()<<(modal->rowCount());
+
 }
